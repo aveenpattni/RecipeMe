@@ -3,7 +3,7 @@ RecipeMe will serve up users fun recipes to try at home.
 
 ## How to run app
 
-Clone to your machine. First run `yarn`. Then build with `yarn build`. Then start the app with `yarn start`.
+Clone to your machine. First run `yarn` in root and ```client``` folder. Then build with `yarn build`. Then start the app with `yarn start`.
 
 ## Available Scripts
 
