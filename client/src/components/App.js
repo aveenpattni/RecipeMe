@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "@emotion/styled";
 import units from "design-units";
 import logo from "../assets/aveen.jpg";
+import axios from "axios";
 
 const u = units;
 
@@ -37,11 +38,28 @@ const WelcomeStyled = styled.p`
   })};
 `
 
+const click = async () => {
+  await axios.get("/api/search", {
+    params: {
+      search: "chicken",
+      from: 0,
+      to: 10
+    }
+  }).then(res => {
+      console.log("✅", res);
+    })
+    .catch(err => {
+      console.log("🔥", err);
+    })
+}
+
 function App() {
   return (
     <AppWrapper>
       <ImageWrapper>
-        <img src={logo} alt="Aveen Pattni"/>
+        <button onClick={click}>
+          <img src={logo} alt="Aveen Pattni"/>
+        </button>
       </ImageWrapper>
       <WelcomeStyled>
         Welcome to Aveen Pattni's React Express App template!
