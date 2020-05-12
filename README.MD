@@ -21,7 +21,7 @@ To make edits to the react app, you will have to run the build.
 
 Will build the react app and store the built files in the `build` folder.
 
-### `yarn start:build:
+### `yarn start:build`
 
 Will run `yarn build` and `yarn start`.
 
