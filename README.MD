@@ -3,7 +3,7 @@ RecipeMe will serve up users fun recipes to try at home.
 
 ## How to run app
 
-Clone to your machine. First run `yarn` in root and ```client``` folder. Then build with `yarn build`. Then start the app with `yarn start`.
+Clone to your machine. First run `yarn` in root. Then build and start with `yarn start:build`.
 
 ## Available Scripts
 
@@ -12,7 +12,7 @@ In this project you can run:
 ### `yarn start`
 
 Runs the express app in development mode.
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 The page will reload if you make any edits in the server.
 To make edits to the react app, you will have to run the build.
@@ -20,6 +20,10 @@ To make edits to the react app, you will have to run the build.
 ### `yarn build`
 
 Will build the react app and store the built files in the `build` folder.
+
+### `yarn start:build:
+
+Will run `yarn build` and `yarn start`.
 
 
 ## Editing React app
