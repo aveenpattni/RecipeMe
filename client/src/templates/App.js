@@ -1,8 +1,10 @@
-import React from 'react';
 import styled from "@emotion/styled";
-import units from "design-units";
-import logo from "../assets/aveen.jpg";
 import axios from "axios";
+import units from "design-units";
+import React from 'react';
+import logo from "../assets/aveen.png";
+import Header from "./header";
+import Footer from "./footer";
 
 const u = units;
 
@@ -38,33 +40,32 @@ const WelcomeStyled = styled.p`
   })};
 `
 
-const click = async () => {
-  await axios.get("/api/search", {
-    params: {
-      search: "chicken",
-      from: 0,
-      to: 10
-    }
-  }).then(res => {
-      console.log("✅", res);
-    })
-    .catch(err => {
-      console.log("🔥", err);
-    })
-}
+// const click = async () => {
+//   await axios.get("/api/search", {
+//     params: {
+//       search: "chicken",
+//       from: 0,
+//       to: 10
+//     }
+//   }).then(res => {
+//       console.log("✅", res);
+//     })
+//     .catch(err => {
+//       console.log("🔥", err);
+//     })
+// }
 
-function App() {
+const App = () => {
   return (
     <AppWrapper>
+      <Header />
       <ImageWrapper>
-        <button onClick={click}>
-          <img src={logo} alt="Aveen Pattni"/>
-        </button>
+        <img src={logo} alt="Aveen Pattni"/>
       </ImageWrapper>
       <WelcomeStyled>
         Welcome to Aveen Pattni's React Express App template!
       </WelcomeStyled>
-      
+      <Footer />
     </AppWrapper>
   );
 }
