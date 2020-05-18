@@ -7,7 +7,7 @@ const base_colours = {
   primary: "#BFD7B5",
   secondary: "#D9D5DE",
   tertiary: "#A3C4BC",
-  text: "0F0F0F",
+  text: "#0F0F0F",
   textBackground: "#FAFAFA"
 };
 
