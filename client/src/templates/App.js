@@ -3,30 +3,51 @@ import units from "design-units";
 import React from 'react';
 import Header from "./header";
 import Footer from "./footer";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import LandingPage from "./landing";
+import SearchPage from "./search";
+import ResultsPage from "./results";
 
 const u = units;
 
 const AppWrapper = styled.div`
   width: 100%;
   height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   ${u({
     backgroundColor: "secondary"
   })};
+`
+const AppStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 `
 
 const App = () => {
   return (
     <AppWrapper>
       <Header />
-      <Switch>
-        <Route path="/" exact render={() => {return <LandingPage/> }} />
-      </Switch>
+      <AppStyled>
+        <Switch>
+          <Route path="/" exact>
+            <LandingPage />
+          </Route>
+          <Route path="/search" exact>
+            <SearchPage />
+          </Route>
+          {/* <Route path="/search/:results" exact>
+            <ResultsPage />
+          </Route> */}
+          <Route path="/search/:results" exact render={(props) => {return <ResultsPage {...props}/> }} />
+          <Route path="/">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </AppStyled>
       <Footer />
     </AppWrapper>
   );
