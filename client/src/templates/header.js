@@ -2,15 +2,17 @@ import styled from "@emotion/styled";
 import units from "design-units";
 import React from 'react';
 import { Logo } from "../components/logo";
+import { Link } from "react-router-dom";
 
 const u = units;
 
-const HeaderStyled = styled.div`
+const HeaderStyled = styled(Link)`
   display: flex;
   justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
+  text-decoration: none;
   ${u({
     height: "80px",
     backgroundColor: "primary"
@@ -19,7 +21,7 @@ const HeaderStyled = styled.div`
 
 const Header = () => {
   return (
-    <HeaderStyled>
+    <HeaderStyled to="/">
       <Logo />
     </HeaderStyled>
   )

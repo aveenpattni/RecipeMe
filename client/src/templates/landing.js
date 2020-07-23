@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import units from "design-units";
 import React from 'react';
 import { Link } from "react-router-dom";
+import { SearchBar } from "../components/seach-bar/container";
 
 const u = units;
 
@@ -21,6 +22,7 @@ const LandingPage = () => {
         <Link to="/search">
           Click Here to Begin!
         </Link>
+        <SearchBar />
       </BeginStyled>
     </LandingStyled>
   )

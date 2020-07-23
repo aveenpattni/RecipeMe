@@ -1,7 +1,8 @@
 import { combineReducers } from "redux"
+import { searchBarReducer } from "../components/seach-bar/reducer";
 
-const theDefaultReducer = (state = 0, action) => state
-
-const rootReducer = combineReducers({theDefaultReducer})
+const rootReducer = combineReducers({
+  searchBar: searchBarReducer
+})
 
 export default rootReducer
