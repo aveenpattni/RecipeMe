@@ -3,6 +3,7 @@ import units from "design-units";
 import React from 'react';
 import { Link } from "react-router-dom";
 import hero from "../assets/hero.jpeg";
+import { SearchBar } from "../components/seach-bar/container";
 
 const u = units;
 
@@ -60,6 +61,7 @@ const LandingPage = () => {
       <Link to="/search">
         <BeginStyled>
           Click Here to Begin!
+          <SearchBar />
         </BeginStyled>
       </Link>
     </LandingStyled>
