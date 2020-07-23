@@ -16,7 +16,7 @@ const LandingStyled = styled.div`
   })};
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-self: center;
   text-align: center;
 `;
 
@@ -49,6 +49,12 @@ const HeroStyled = styled.div`
     })};
   }
 `;
+const LandingMessageStyled = styled.div``;
+const SearchBarStyled = styled.div`
+  ${u({
+    paddingBottom: 1
+  })};
+`;
 
 const LandingPage = () => {
   return (
@@ -57,11 +63,16 @@ const LandingPage = () => {
         <img src={hero} alt="Hero Banner"/>
     </HeroStyled>
     <LandingStyled>
-      <p>Welcome to RecipeMe! Your favourite online tool to search for fun recipes.</p>
+      <LandingMessageStyled>
+        <p>Welcome to RecipeMe! Your favourite online tool to search for fun recipes.</p>
+        <p>Search here for a quick search or click below to begin!</p>
+      </LandingMessageStyled>
+      <SearchBarStyled>
+        <SearchBar />
+      </SearchBarStyled>
       <Link to="/search">
         <BeginStyled>
           Click Here to Begin!
-          <SearchBar />
         </BeginStyled>
       </Link>
     </LandingStyled>

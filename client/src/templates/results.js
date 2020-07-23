@@ -12,6 +12,7 @@ const ResultsStyled = styled.div`
 `;
 
 const ResultsPage = (props) => {
+  console.log("🔥", props);
   return (
     <ResultsStyled>
         <Link to="/">

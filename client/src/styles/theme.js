@@ -8,7 +8,8 @@ const base_colours = {
   secondary: "#D9D5DE",
   tertiary: "#A3C4BC",
   text: "#0F0F0F",
-  textBackground: "#FAFAFA"
+  textBackground: "#FAFAFA",
+  white: "#FFF"
 };
 
 export const theme = {
