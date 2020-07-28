@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const u = units;
 
-const SearchStyled = styled.div`
+const RecipePageStyled = styled.div`
   ${u({
     color: "text"
   })};
@@ -13,14 +13,14 @@ const SearchStyled = styled.div`
 
 const BeginStyled = styled.div``;
 
-const SearchPage = () => {
+const RecipePage = () => {
   return (
-    <SearchStyled>
+    <RecipePageStyled>
       <Link to="/">
-        Click Here to go home!
+        Recipe Page! Click Here to go home!
       </Link>
-    </SearchStyled>
+    </RecipePageStyled>
   )
 }
 
-export default SearchPage;
+export default RecipePage;

@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import LandingPage from "./landing";
 import SearchPage from "./search";
 import ResultsPage from "./results";
+import RecipePage from "./recipe";
 
 const u = units;
 
@@ -39,10 +40,8 @@ const App = () => {
           <Route path="/search" exact>
             <SearchPage />
           </Route>
-          {/* <Route path="/search/:results" exact>
-            <ResultsPage />
-          </Route> */}
-          <Route path="/search/:results" exact render={(props) => {return <ResultsPage {...props}/> }} />
+          <Route path="/search/:query" render={(props) =>  <ResultsPage {...props} /> } />
+          <Route path="/recipe/:id" render={(props) =>  <RecipePage {...props} /> } />
           <Route path="/">
             <Redirect to="/" />
           </Route>

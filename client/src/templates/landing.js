@@ -7,6 +7,12 @@ import { SearchBar } from "../components/seach-bar/container";
 
 const u = units;
 
+
+const LandingPageStyled = styled.div`
+  ${u({
+    maxWidth: [0, 1, 2]
+  })}
+`;
 const LandingStyled = styled.div`
   ${u({
     color: "text",
@@ -20,14 +26,18 @@ const LandingStyled = styled.div`
   text-align: center;
 `;
 
-const BeginStyled = styled.button`
+const BeginStyled = styled(Link)`
   border-radius: 4px;
   ${u({
     width: "8rem",
     padding: 1,
     border: "1px solid black",
-    backgroundColor: "primary"
+    backgroundColor: "primary",
+    fontSize: "button",
+    color: "text"
   })};
+  text-decoration: none;
+  align-self: center;
   :hover {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
@@ -39,8 +49,7 @@ const BeginStyled = styled.button`
 `;
 const HeroStyled = styled.div`
   ${u({
-    paddingBottom: [1, 2, 3],
-    paddingTop: [0, 0, 1]
+    paddingBottom: [1, 2, 3]
   })};
   img {
     ${u({
@@ -58,25 +67,23 @@ const SearchBarStyled = styled.div`
 
 const LandingPage = () => {
   return (
-    <>
-    <HeroStyled>
-        <img src={hero} alt="Hero Banner"/>
-    </HeroStyled>
-    <LandingStyled>
-      <LandingMessageStyled>
-        <p>Welcome to RecipeMe! Your favourite online tool to search for fun recipes.</p>
-        <p>Search here for a quick search or click below to begin!</p>
-      </LandingMessageStyled>
-      <SearchBarStyled>
-        <SearchBar />
-      </SearchBarStyled>
-      <Link to="/search">
-        <BeginStyled>
+    <LandingPageStyled>
+      <HeroStyled>
+          <img src={hero} alt="Hero Banner"/>
+      </HeroStyled>
+      <LandingStyled>
+        <LandingMessageStyled>
+          <p>Welcome to RecipeMe! Your favourite online tool to search for fun recipes.</p>
+          <SearchBarStyled>
+            <SearchBar />
+          </SearchBarStyled>
+          <p>Search here for a quick search or click below to begin!</p>
+        </LandingMessageStyled>
+        <BeginStyled to="/search">
           Click Here to Begin!
         </BeginStyled>
-      </Link>
-    </LandingStyled>
-    </>
+      </LandingStyled>
+    </LandingPageStyled>
   )
 }
 
