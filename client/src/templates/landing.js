@@ -12,6 +12,9 @@ const LandingPageStyled = styled.div`
   ${u({
     maxWidth: [0, 1, 2]
   })}
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 `;
 const LandingStyled = styled.div`
   ${u({

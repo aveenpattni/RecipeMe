@@ -11,8 +11,6 @@ const SearchStyled = styled.div`
   })};
 `;
 
-const BeginStyled = styled.div``;
-
 const SearchPage = () => {
   return (
     <SearchStyled>

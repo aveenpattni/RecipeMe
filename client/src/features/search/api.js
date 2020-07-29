@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const search = async (paramaters) => {
+export const searchRequest = async (parameters) => {
   await axios.get("/api/search", {
     params: {
-      search: paramaters.q,
+      search: parameters.q,
       from: 0,
       to: 10
     }

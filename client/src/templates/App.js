@@ -6,7 +6,7 @@ import Footer from "./footer";
 import { Switch, Route, Redirect } from "react-router-dom";
 import LandingPage from "./landing";
 import SearchPage from "./search";
-import ResultsPage from "./results";
+import { ResultsPage } from "./results/container";
 import RecipePage from "./recipe";
 
 const u = units;
