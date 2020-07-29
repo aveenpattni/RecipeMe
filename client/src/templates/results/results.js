@@ -1,26 +1,33 @@
 import styled from "@emotion/styled";
 import units from "design-units";
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
 import queryString from "query-string";
+import { PaginationFoot } from "../../features/pagination-foot/container";
 
 const u = units;
 
 const ResultsStyled = styled.div`
   ${u({
+    width: "100%",
     color: "text"
   })};
 `;
 
 export const ResultsPageView = (props) => {
-  console.log(queryString.parse(props.location.search), props.match.params.query);
-  // Add component mount
-  props.searchRecipe({q: props.match.params.query.replace("_", " ")});
+  useEffect(() => {
+    console.log(queryString.parse(props.location.search));
+    // const queryParams = queryString.parse(props.location.search);
+    props.searchRecipe({
+      q: props.match.params.query.replace("_", " "),
+      from: 0,
+      to: 10
+    });
+  }, []);
+  console.log("🔺props", props)
   return (
     <ResultsStyled>
-        <Link to="/">
-          Here are the results
-        </Link>
+      Results
+      <PaginationFoot />
     </ResultsStyled>
   )
-}
+};

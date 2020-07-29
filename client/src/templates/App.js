@@ -13,7 +13,7 @@ const u = units;
 
 const AppWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,7 @@ const AppWrapper = styled.div`
   })};
 `
 const AppStyled = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

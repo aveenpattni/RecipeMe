@@ -4,8 +4,8 @@ import { searchRecipeSuccess, searchRecipeFailure, SEARCH_RECIPE } from "./actio
 
 export function* search({searchParams}) {
   try {
-    const searchResponse = yield call(searchRequest, {q: searchParams.q});
-    console.log("🔥", searchResponse);
+    const searchResponse = yield call(searchRequest, {...searchParams});
+    console.log(searchParams, searchResponse);
     yield put(searchRecipeSuccess(searchResponse));
   }
   catch {
