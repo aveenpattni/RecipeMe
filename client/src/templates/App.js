@@ -24,9 +24,13 @@ const AppWrapper = styled.div`
 `
 const AppStyled = styled.div`
   width: 100%;
+  ${u({
+    maxWidth: [0, 1, 2]
+  })};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
 `
 
 const App = () => {

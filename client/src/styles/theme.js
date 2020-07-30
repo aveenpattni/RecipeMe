@@ -1,9 +1,13 @@
 //Define your standard font sizes here
 const font_sizes = {
+  h1: "32px",
+  h2: "28px",
+  h3: "24px",
   h4: "20px",
   h5: "16px",
-  h6: "12px",
-  button: "14px"
+  h6: "10px",
+  button: "14px",
+  p: "12px"
 };
 //Define your standard line height here
 const line_heights = {};
