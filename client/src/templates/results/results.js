@@ -2,16 +2,19 @@ import styled from "@emotion/styled";
 import units from "design-units";
 import React, { useEffect } from 'react';
 import queryString from "query-string";
-import { pathOr, findLastIndex } from "ramda";
+import { pathOr } from "ramda";
 import { PaginationFoot } from "../../features/pagination-foot/container";
 import { RecipeCard } from "../../components/recipe-card";
+import { Filters } from "../../features/filters/container";
 
 const u = units;
 
 const ResultsStyled = styled.div`
   ${u({
     width: "100%",
-    color: "text"
+    color: "text",
+    paddingRight: [2, 3, 0],
+    paddingLeft: [2, 3, 0]
   })};
 `;
 const GridStyled = styled.div`
@@ -33,10 +36,11 @@ export const ResultsPageView = (props) => {
       from: props.results.params.searchFrom,
       to: props.results.params.searchTo
     });
-  }, []);
+  }, [props.results.params]);
   console.log("🔺props", props)
   return (
     <ResultsStyled>
+      <Filters />
       <GridStyled>
         {pathOr([], ["results", "hits"], props).map(hit => <RecipeCard recipe={hit.recipe}/>)}
       </GridStyled>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const u = units;
 
 const SearchStyled = styled.div`
+  width: 100%;
   ${u({
     color: "text"
   })};
