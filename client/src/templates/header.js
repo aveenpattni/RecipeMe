@@ -10,6 +10,7 @@ const HeaderStyled = styled(Link)`
   display: flex;
   justify-content: center;
   position: fixed;
+  z-index: 100;
   top: 0;
   width: 100%;
   text-decoration: none;

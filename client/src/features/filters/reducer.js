@@ -5,10 +5,7 @@ import { append, reject } from "ramda"
 const initialFiltersState = {
   ingredients: "10+",
   cuisines: [],
-  calories: {
-    min: null,
-    max: null
-  },
+  calories: "",
   time: null
 };
 
@@ -27,7 +24,10 @@ const updateCuisines = (state, {cuisine}) => ({
 
 const updateCalories = (state, {calories}) => ({
   ...state,
-  calories
+  calories:
+    (state.calories.includes(calories) ?
+      reject(i => i === calories, state.calories) :
+      append(calories, state.calories))
 });
 
 const updateTime = (state, {time}) => ({

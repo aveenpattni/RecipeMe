@@ -3,6 +3,7 @@ import units from "design-units";
 import React, { useState } from 'react';
 import { ingredientsNumList } from "../../fixtures/constants";
 import { Cuisines } from "../../components/cuisines";
+import { Calories } from "../../components/calories";
 
 const u = units;
 
@@ -12,7 +13,8 @@ const FiltersWrapper = styled.div`
   })}
   flex-direction: column;
   ${u({
-    width: ["100%", "20rem"],
+    width: "20rem",
+    height: "100%",
     backgroundColor: "white"
   })};
 `
@@ -30,6 +32,9 @@ const FilterHeader = styled.h4`
 `
 
 const FilterSection = styled.div``
+const FilterToggle = styled.div`
+  cursor: pointer;
+`
 
 const IngredientsSelectorStyled = styled.select``
 
@@ -37,14 +42,16 @@ const IngredientsSelectorStyled = styled.select``
 export const FiltersView = (props) => {
   const [isIngOpen, toggleIng] = useState(false);
   const [isCuisineOpen, toggleCuisine] = useState(false);
+  const [isCalsOpen, toggleCals] = useState(false);
   return (
     <FiltersWrapper>
       Filters
       <FiltersAccordion>
+
         <FilterSection>
           <FilterHeader>
             Number of Ingredients
-            <div onClick={() => toggleIng(!isIngOpen)}>{isIngOpen ? "🔻" : "🔺"}</div>
+            <FilterToggle onClick={() => toggleIng(!isIngOpen)}>{isIngOpen ? "🔻" : "🔺"}</FilterToggle>
             </FilterHeader>
           {
             isIngOpen ?
@@ -56,10 +63,11 @@ export const FiltersView = (props) => {
             : null
           }
         </FilterSection>
+
         <FilterSection>
           <FilterHeader>
             Cuisines
-            <div onClick={() => toggleCuisine(!isCuisineOpen)}>{isCuisineOpen ? "🔻" : "🔺"}</div>
+            <FilterToggle onClick={() => toggleCuisine(!isCuisineOpen)}>{isCuisineOpen ? "🔻" : "🔺"}</FilterToggle>
           </FilterHeader>
           {
             isCuisineOpen ?
@@ -67,6 +75,19 @@ export const FiltersView = (props) => {
             : null
           }
         </FilterSection>
+
+        <FilterSection>
+          <FilterHeader>
+            Calories
+            <FilterToggle onClick={() => toggleCals(!isCalsOpen)}>{isCalsOpen ? "🔻" : "🔺"}</FilterToggle>
+          </FilterHeader>
+          {
+            isCalsOpen ?
+            <Calories updateCalories={props.updateCalories} calories={props.calories} />
+            : null
+          }
+        </FilterSection>
+
       </FiltersAccordion>
     </FiltersWrapper>
   )

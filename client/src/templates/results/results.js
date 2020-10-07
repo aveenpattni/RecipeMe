@@ -10,6 +10,7 @@ import { Filters } from "../../features/filters/container";
 const u = units;
 
 const ResultsStyled = styled.div`
+  display: flex;
   ${u({
     width: "100%",
     color: "text",
@@ -26,6 +27,10 @@ const GridStyled = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
 `;
+const FiltersStyled = styled.div`
+  position: relative;
+  z-index: 1;
+`;
 
 export const ResultsPageView = (props) => {
   useEffect(() => {
@@ -39,12 +44,16 @@ export const ResultsPageView = (props) => {
   }, [props.results.params]);
   console.log("🔺props", props)
   return (
-    <ResultsStyled>
-      <Filters />
-      <GridStyled>
-        {pathOr([], ["results", "hits"], props).map(hit => <RecipeCard recipe={hit.recipe}/>)}
-      </GridStyled>
+    <>
+      <ResultsStyled>
+        <FiltersStyled>
+          <Filters />
+        </FiltersStyled>
+        <GridStyled>
+          {pathOr([], ["results", "hits"], props).map(hit => <RecipeCard recipe={hit.recipe}/>)}
+        </GridStyled>
+      </ResultsStyled>
       <PaginationFoot total={props.results.count}/>
-    </ResultsStyled>
+    </>
   )
 };

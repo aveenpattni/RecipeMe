@@ -1,8 +1,7 @@
 export const UPDATE_FILTERS = {
   INGREDIENTS: "UPDATE_FILTERS.INGREDIENTS",
   CUISINE: "UPDATE_FILTERS.CUISINE",
-  CALORIES_MAX: "UPDATE_FILTERS.CALORIES_MAX",
-  CALORIES_MIN: "UPDATE_FILTERS.CALORIES_MIN",
+  CALORIES: "UPDATE_FILTERS.CALORIES",
   TIME: "UPDATE_FILTERS.TIME"
 };
 
@@ -17,7 +16,7 @@ export const updateCuisines = (cuisine) => ({
 });
 
 export const updateCalories = (calories) => ({
-  type: UPDATE_FILTERS.CALORIES_MAX,
+  type: UPDATE_FILTERS.CALORIES,
   calories
 });
 
