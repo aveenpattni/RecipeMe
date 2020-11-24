@@ -13,7 +13,10 @@ router.get("/search", async (req, res) => {
       app_id: config.id,
       app_key: config.secretKey,
       from: req.query.from,
-      to: req.query.to
+      to: req.query.to,
+      // ingr: req.query.ingr,
+      // calories: req.query.calories,
+      time: req.query.time
     }
   }).then(response => {
     res.json(R.omit(["more", "q"],response.data));

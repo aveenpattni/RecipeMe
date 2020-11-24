@@ -5,9 +5,12 @@ export const searchRequest = async (parameters) => {
 
   const res = await axios.get("/api/search", {
     params: {
-      search: parameters.q,
-      from: parameters.from || 0,
-      to: parameters.to
+      search: parameters.q.replace("_", " "),
+      from: parameters.from,
+      to: parameters.to,
+      // ingr: parameters.ingr === "10+" ? undefined : parameters.ingr,
+      // calories: parameters.calories.replace(/\+/gi, ""),
+      time: parameters.time.replace(/\+/gi, "")
     }
   });
   return res.data;

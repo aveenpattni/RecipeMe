@@ -37,12 +37,14 @@ export const ResultsPageView = (props) => {
     console.log(queryString.parse(props.location.search));
     // const queryParams = queryString.parse(props.location.search);
     props.searchRecipe({
-      q: props.match.params.query.replace("_", " "),
-      from: props.results.params.searchFrom,
-      to: props.results.params.searchTo
+      q: props.match.params.query || "",
+      from: props.results.params.searchFrom || 0,
+      to: props.results.params.searchTo || 10,
+      ingr: props.filters.ingredients || "100",
+      calories: props.filters.calories || "5000",
+      time: props.filters.time || "0+"
     });
-  }, [props.results.params]);
-  console.log("🔺props", props)
+  }, [props.results.params, props.filters]);
   return (
     <>
       <ResultsStyled>

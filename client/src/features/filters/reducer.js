@@ -4,9 +4,8 @@ import { append, reject } from "ramda"
 
 const initialFiltersState = {
   ingredients: "10+",
-  cuisines: [],
   calories: "",
-  time: null
+  time: "0+"
 };
 
 const updateIngredients = (state, {ingr}) => ({

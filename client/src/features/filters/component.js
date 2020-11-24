@@ -66,18 +66,6 @@ export const FiltersView = (props) => {
 
         <FilterSection>
           <FilterHeader>
-            Cuisines
-            <FilterToggle onClick={() => toggleCuisine(!isCuisineOpen)}>{isCuisineOpen ? "🔻" : "🔺"}</FilterToggle>
-          </FilterHeader>
-          {
-            isCuisineOpen ?
-            <Cuisines updateCuisines={props.updateCuisines} cuisines={props.cuisines} />
-            : null
-          }
-        </FilterSection>
-
-        <FilterSection>
-          <FilterHeader>
             Calories
             <FilterToggle onClick={() => toggleCals(!isCalsOpen)}>{isCalsOpen ? "🔻" : "🔺"}</FilterToggle>
           </FilterHeader>
